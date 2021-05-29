@@ -17,3 +17,11 @@
     transform: rotate(360deg);
   }
 }
+.main-div{
+  
+}
+.btns{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
