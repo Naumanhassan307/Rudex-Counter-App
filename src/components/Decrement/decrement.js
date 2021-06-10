@@ -1,24 +1,19 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+import { useDispatch, useSelector } from "react-redux";
+import {DECRE_COUNT} from "../../redux/actions/Action"
 
-import "./decrement.css";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-}));
+function Decrement() {
+  const count = useSelector((store) => store.counterReducer.counterNumber);
+  const dispatch = useDispatch();
 
-export default function ContainedButtons() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <Button variant="contained" color="primary" className="btn">
-        -
-      </Button>
-    </div>
-  );
+  const ctaHandler=()=>{
+      if (count > 0){
+          dispatch(DECRE_COUNT(count - 1));
+      }else
+      return
+      
+  }
+  return( 
+        <button onClick={ctaHandler}>--</button>
+  )
 }
+export default Decrement;

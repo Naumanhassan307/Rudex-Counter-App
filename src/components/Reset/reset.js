@@ -1,24 +1,12 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 
-import "./reset.css"
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-}));
+import { useDispatch} from "react-redux";
+import { RESET_COUNT } from "../../redux/actions/Action";
 
-export default function ResetValue() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <Button variant="contained" color="primary" className="reset-btn" >
-        Reset
-      </Button>
-    </div>
-  );
+function Reset() {
+    const dispatch= useDispatch()
+    const ctaHandler=()=>{
+        dispatch(RESET_COUNT(0))
+    }
+  return <button onClick={ctaHandler}>Reset</button>;
 }
+export default Reset;

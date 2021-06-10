@@ -1,27 +1,22 @@
 
 import "./App.css";
+import Decrement from "./components/decrement/Decrement";
 
-import Display from "./components/Display/display"
-
-import Decrement from "./components/Decrement/decrement"
-import ResetValue from "./components/Reset/reset"
-import Increment from "./components/Increment/increment"
+import Display from "./components/display/Display"
+import Increment from "./components/increment/Increment";
+import Reset from "./components/reset/Reset";
 
 function App() {
+ 
   return (
     <>
       <h1>REDUX COUNTER </h1>
       <div className="main-div">
-       
-        <div>
-          <Display />
-        </div>
+        <Display />
         <br />
-        <div className="btns">
-          <Decrement />
-          <ResetValue />
-          <Increment />
-        </div>
+        <Increment />
+        <Reset />
+        <Decrement />
       </div>
     </>
   ); 
